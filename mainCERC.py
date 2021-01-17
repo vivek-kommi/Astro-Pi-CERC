@@ -103,7 +103,7 @@ camera = PiCamera()
 CSVFile = open('astro.csv', 'w')
 
 # when the time is less than our time we specified:
-while (now_time < (start_time + datetime.timedelta(hours=0, minutes=1))):
+while (now_time < (start_time + datetime.timedelta(hours=2, minutes=0))):
     # reinitialsing variables
     ImgHeight = 720
     ImgWidth = 1280
