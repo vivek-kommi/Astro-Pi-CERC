@@ -104,7 +104,7 @@ def Sea_Detector(img, ImgHeight, ImgWidth):
 
 count = 0
 camera = PiCamera()
-camera.resolution = (1300, 768)
+camera.resolution = (2592, 1944)
 # Creates csv file and sets it under the variable: CSVFile
 CSVFile = open('astro.csv', 'w')
 CSVFile.write("FILE NAME:            NIGHT VALUE:            SEA VALUE:            Date:")
