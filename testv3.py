@@ -7,6 +7,7 @@ the names of the pictures in each line .
 # Import all libraries
 #import rasterio
 #import matplotlib.pyplot as plt
+import os
 import datetime
 from time import sleep
 from picamera import PiCamera
@@ -20,6 +21,10 @@ b = [0, 0, 128]  # Blue navy
 o = [0, 0, 0]  # Black
 r = [255, 0, 0]  # Red
 
+
+path = os.getcwd()
+path1 = path + '/Photos'
+os.mkdir(path1)
 start_time = datetime.datetime.now()
 now_time = datetime.datetime.now()
 count1 = 0
@@ -99,6 +104,7 @@ def Sea_Detector(img, ImgHeight, ImgWidth):
 
 count = 0
 camera = PiCamera()
+camera.resolution = (1300, 768)
 # Creates csv file and sets it under the variable: CSVFile
 CSVFile = open('astro.csv', 'w')
 CSVFile.write("FILE NAME:            NIGHT VALUE:            SEA VALUE:            Date:")
