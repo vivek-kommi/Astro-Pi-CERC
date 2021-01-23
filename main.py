@@ -136,7 +136,7 @@ camera = PiCamera()
 camera.resolution = (1300, 768)
 # Creates csv file and sets it under the variable: CSVFile
 CSVFile = open('astro.csv', 'w')
-CSVFile.write("FILE NAME:            NIGHT VALUE:            SEA VALUE:            Cloud:              Date:" + '\n')
+CSVFile.write("FILE NAME,            NIGHT VALUE,            SEA VALUE,            Cloud,              Date" + '\n')
 # when the time is less than our time we specified:
 while (now_time < (start_time + datetime.timedelta(hours=0, minutes=1))):
     # reinitialsing variables
