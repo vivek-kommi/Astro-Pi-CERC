@@ -138,7 +138,7 @@ camera.resolution = (1300, 768)
 CSVFile = open('astro.csv', 'w')
 CSVFile.write("FILE NAME,            NIGHT VALUE,            SEA VALUE,            Cloud,              Date" + '\n')
 # when the time is less than our time we specified:
-while (now_time < (start_time + datetime.timedelta(hours=0, minutes=1))):
+while (now_time < (start_time + datetime.timedelta(hours=2, minutes=55))):
     # reinitialsing variables
     ImgHeight = 720
     ImgWidth = 1280
