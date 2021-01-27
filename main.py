@@ -151,15 +151,15 @@ while (now_time < (start_time + datetime.timedelta(hours=2, minutes=55))):
     #fig.set_cmap('gist_earth')
     #plt.savefig(file_name)
     # camera gets picture and saves it under the path as file_name
-    camera.capture("/home/pi/CERC-ASTROPI/Photos/" + file_name)
+    camera.capture("/Photos/" + file_name)
     # the count variable increases
     count += 1
-    img = cv.imread("/home/pi/CERC-ASTROPI/Photos/" + file_name)
+    img = cv.imread("/Photos/" + file_name)
         # the time interval between image captures
     sleep(10)
     var_1 = Night_Detector(img, ImgHeight, ImgWidth)
     var_2 = Sea_Detector(img, ImgHeight, ImgWidth)
-    var_3 = Cloud_Detector(img , "/home/pi/CERC-ASTROPI/Photos/" + file_name, ImgHeight, ImgWidth)
+    var_3 = Cloud_Detector(img , "/Photos/" + file_name, ImgHeight, ImgWidth)
     # writing the file name and then adding a new line
     CSVFile.write(file_name + " , The night value: " + str(var_1) + " , The sea value: " + str(var_2)+ "The Cloud Value:  " + str(var_3) + " , " + str(start_time) + '\n')
 
