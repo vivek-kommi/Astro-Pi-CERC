@@ -103,7 +103,9 @@ def Sea_Detector(img, ImgHeight, ImgWidth):
 import cv2
 import numpy as np
 
-def Cloud_Detector(img, fname, ImgHeight, ImgWidth):
+def Cloud_Detector(fname, ImgHeight, ImgWidth):
+   img = cv.imread(fname)
+
    white = np.array([ImgHeight,ImgHeight,ImgHeight])
    lowerBound = np.array([ImgWidth,ImgWidth,ImgWidth])
    white_and_black_img = cv.inRange(img, lowerBound, white)
@@ -159,7 +161,7 @@ while (now_time < (start_time + datetime.timedelta(hours=2, minutes=55))):
     sleep(10)
     var_1 = Night_Detector(img, ImgHeight, ImgWidth)
     var_2 = Sea_Detector(img, ImgHeight, ImgWidth)
-    var_3 = Cloud_Detector(img , "/Photos/" + file_name, ImgHeight, ImgWidth)
+    var_3 = Cloud_Detector("/Photos/" + file_name, ImgHeight, ImgWidth)
     # writing the file name and then adding a new line
     CSVFile.write(file_name + " , The night value: " + str(var_1) + " , The sea value: " + str(var_2)+ "The Cloud Value:  " + str(var_3) + " , " + str(start_time) + '\n')
 
