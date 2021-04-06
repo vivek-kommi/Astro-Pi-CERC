@@ -105,33 +105,33 @@ import cv2
 import numpy as np
 
 def Cloud_Detector(fname, ImgHeight, ImgWidth):
-   img = cv.imread(fname)
+    img = cv.imread(fname)
 
-   white = np.array([ImgHeight,ImgHeight,ImgHeight])
-   lowerBound = np.array([ImgWidth,ImgWidth,ImgWidth])
-   white_and_black_img = cv.inRange(img, lowerBound, white)
-   resized_img = cv.resize(white_and_black_img, (1000, 650))
-   white_pixel = 0
-   count2 = 0
-   count3 = 0
-   try:
-      while white_pixel == 1:
-          count3 = 0
-          i = white_and_black_img[count]
-          while white_pixel == 0:
-              if count3 == len(i):
-                  break
-              value = i[count3]
-              if value == ImgHeight:
-                  white_pixel = 1
-                  count3 += 1
-                  count2 += 1
-	          Cloud = True
-	      else:
-	          Cloud = False
-      return(Cloud)
-   except:
-	Cloud = True
+    white = np.array([ImgHeight,ImgHeight,ImgHeight])
+    lowerBound = np.array([ImgWidth,ImgWidth,ImgWidth])
+    white_and_black_img = cv.inRange(img, lowerBound, white)
+    resized_img = cv.resize(white_and_black_img, (1000, 650))
+    white_pixel = 0
+    count2 = 0
+    count3 = 0
+    try:
+        while white_pixel == 1:
+            count3 = 0
+            i = white_and_black_img[count]
+            while white_pixel == 0:
+                if count3 == len(i):
+                    break
+                value = i[count3]
+                if value == ImgHeight:
+                    white_pixel = 1
+                    count3 += 1
+                    count2 += 1
+                    Cloud = True
+                else:
+                    Cloud = False
+        return(Cloud)
+    except:
+        Cloud = True
         return(Cloud)
 
 count = 0
